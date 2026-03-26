@@ -1,220 +1,129 @@
-# CHERISH Portfolio V2
+<div align="center">
+  <img src="./AdobeExpress.png" alt="Cherish Kumar Satpathy" width="140" />
 
-An immersive, animation-rich personal portfolio built with pure HTML, CSS, and JavaScript.
+  <h1>CHERISH Portfolio V2</h1>
+  <p><strong>Immersive Sci-Fi Personal Portfolio</strong></p>
 
-This project showcases a futuristic UI system with glassmorphism, 3D tilt interactions, magnetic buttons, animated canvas stars, meteor effects, project-stack storytelling, and a Formspree-powered contact workflow.
+  <p>
+    <a href="https://stoneskyler61-hub.github.io/new-portfolio/" target="_blank">
+      <img src="https://img.shields.io/badge/LIVE%20SITE-Visit%20Now-00C2FF?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Site" />
+    </a>
+    <img src="https://img.shields.io/badge/HTML5-Structure-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+    <img src="https://img.shields.io/badge/CSS3-Design-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+    <img src="https://img.shields.io/badge/JavaScript-Interactions-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111" alt="JavaScript" />
+  </p>
+</div>
 
----
+A modern, animation-heavy personal portfolio built with vanilla HTML, CSS, and JavaScript.  
+It is designed to feel cinematic, interactive, and visually premium while remaining lightweight and deployment-friendly.
 
-## Live Identity
+## Brand Direction
 
-- Developer: Cherish Kumar Satpathy
-- Role Focus: Full Stack Developer
-- Location Shown: Bhubaneswar, India
-- Primary Theme: Cinematic sci-fi portfolio experience
+- Visual language: Glassmorphism + futuristic gradients + kinetic motion
+- Experience style: Immersive, scroll-reactive, and interaction-driven
+- Goal: Convert visitors into recruiters, collaborators, and clients
 
----
+## Color System
 
-## What This Project Delivers
+| Token | Hex | Usage |
+|---|---|---|
+| Midnight Base | `#000319` | Core background |
+| Deep Card | `#04071D` | Card surfaces |
+| Soft White | `#E4ECFF` | Primary text |
+| Accent Purple | `#CBACF9` | Highlights, glows, CTA focus |
+| Neon Green | `#00FF88` | Active status + success states |
 
-- Single-page portfolio with clear sections: Home, About, Work, Contact
-- High-impact hero section with glitch typography and kinetic CTA buttons
-- Complex bento-grid profile system for philosophy, stack, status, and setup
-- Sticky stacked project cards for storytelling while scrolling
-- Interactive contact panel with orbiting social links and AJAX form submission
-- Responsive behavior tuned for desktop, tablet, mobile, and small-mobile layouts
-- No build tooling required: runs directly in browser
+## Live Demo
 
----
+- Portfolio: https://stoneskyler61-hub.github.io/new-portfolio/
 
-## Core Features
+## Key Features
 
-### 1) Cinematic UI and Motion Layer
-- Fixed atmospheric background system with:
-	- Grid texture
-	- Spotlight blur gradient
-	- Canvas starfield with opacity twinkle animation
-	- Programmatically generated meteor shower
-- Glitch-text title effect using pseudo-elements and clip-path animation
-- Animated CTA styles: liquid fill, draw-outline, rotating gradient borders
-
-### 2) Advanced Interaction Design
-- Magnetic hover effect for nav and key interactive controls
-- 3D tilt-card parallax interaction for about-section cards
-- Scroll-based AR/VR-style rotation for selected sections (disabled on small screens)
-- Cinematic burst-blink animation on footer headline
-
-### 3) Work Showcase Architecture
-- Sticky progressive project-card stack with increasing depth and hover lift
-- Technology tags per project with brand color coding
-- Outbound links for demos and source repositories
-
-### 4) Contact System
-- Integrated Formspree endpoint for backend-free contact handling
-- Async JavaScript submission with:
-	- Loading state
-	- Success state
-	- Error handling for API/network failures
-- Typewriter status line triggered via IntersectionObserver
-
-### 5) Responsive Engineering
-- Breakpoints for:
-	- <=1200px (grid restructuring)
-	- <=992px (layout realignment, effects constraints)
-	- <=768px (single-column adaptation)
-	- <=480px (tight mobile optimization)
-- Touch-safe behavior by conditionally enabling hover-only interactions
-
----
+- Cinematic hero section with glitch typography and motion-rich CTAs
+- Animated atmospheric background:
+  - Canvas starfield
+  - Dynamic meteor shower
+  - Spotlight and grid texture layers
+- Bento-style About section with 3D tilt card interaction
+- Magnetic hover behavior for links and primary controls
+- Sticky stacked project cards for scroll storytelling
+- Contact module with orbiting social icons and Formspree integration
+- AJAX form submission with loading, success, and error states
+- Responsive behavior tuned for desktop, tablet, and mobile breakpoints
 
 ## Tech Stack
 
-- HTML5 semantic structure
-- CSS3 (custom properties, advanced animation, glassmorphism, responsive layouts)
-- Vanilla JavaScript (DOM APIs, canvas rendering, fetch, observers)
-- Font Awesome (iconography)
-- Google Fonts (Space Grotesk, Syncopate)
-- Formspree (form delivery backend)
-
----
+- HTML5
+- CSS3 (custom properties, animation system, responsive media queries)
+- Vanilla JavaScript (DOM APIs, canvas rendering, fetch, IntersectionObserver)
+- Font Awesome
+- Google Fonts: Space Grotesk, Syncopate
+- Formspree (contact backend)
 
 ## Project Structure
 
 ```text
 new-portfolio-main/
-|- index.html      # Semantic single-page layout and content sections
-|- style.css       # Complete visual system, interactions, and responsive rules
-|- script.js       # Runtime interactivity, animation logic, and form handling
-|- AdobeExpress.png# Profile image asset used in hero section
-|- README.md       # Project documentation
+|- index.html
+|- style.css
+|- script.js
+|- AdobeExpress.png
+|- README.md
 ```
 
----
+## Implementation Highlights
 
-## How It Works (Implementation Notes)
+- `index.html`: semantic single-page architecture (Home, About, Work, Contact)
+- `style.css`: complete design engine, motion language, and adaptive layout system
+- `script.js`: interactivity runtime for AR/VR-like scroll effects, magnetic controls, tilt behavior, canvas stars, meteors, typewriter header, and form lifecycle
 
-### HTML Layer
-- Uses a fixed background wrapper plus content layers for depth separation.
-- Organized into four major semantic areas:
-	- Hero
-	- About
-	- Work
-	- Footer/Contact
-
-### CSS Layer
-- Centralized design tokens via root variables:
-	- Background palette
-	- Accent color
-	- Font families
-	- Glass border values
-- Defines reusable interaction classes:
-	- magnetic
-	- tilt-card
-	- draw-btn
-	- cyber-btn
-- Uses responsive media blocks to preserve visual identity across devices.
-
-### JavaScript Layer
-- Initializes all interactions after DOMContentLoaded.
-- Handles:
-	- Scroll perspective transforms
-	- Magnetic movement calculations from cursor offset and element center
-	- Tilt-card rotation from pointer deltas
-	- Canvas-based star animation loop
-	- Dynamic meteor element creation
-	- Contact form async submission lifecycle
-	- Footer headline blink sequence timing
-
----
-
-## Run Locally
-
-1. Clone the repository.
-2. Open the project folder.
-3. Launch index.html in a browser.
-
-Optional local server (recommended for development):
+## Local Setup
 
 ```powershell
-# From project root
+git clone https://github.com/stoneskyler61-hub/new-portfolio.git
+cd new-portfolio
+```
+
+Open directly:
+
+```text
+index.html
+```
+
+Or serve locally:
+
+```powershell
 python -m http.server 5500
 ```
 
-Then open:
+Then visit:
 
 ```text
 http://localhost:5500
 ```
 
----
+## Resume-Ready Project Entry
 
-## Customization Guide
+### Short Version
+Designed and built an immersive personal portfolio using HTML, CSS, and JavaScript with advanced animations, 3D UI interactions, and asynchronous contact workflow integration.
 
-### Personal Details
-- Update name, bio text, and contact fields in index.html.
-- Replace AdobeExpress.png with your own optimized profile image.
+### ATS Bullet Points
+- Engineered a high-impact single-page portfolio with cinematic motion design including glitch text, animated starfield canvas, meteor effects, and glassmorphic UI layers.
+- Implemented advanced interaction systems in vanilla JavaScript such as magnetic cursor effects, 3D card tilt transforms, and scroll-based perspective dynamics.
+- Built a responsive front-end architecture with breakpoint-specific layout strategy for mobile, tablet, and desktop consistency.
+- Integrated Formspree with custom AJAX handling and designed loading/success/error feedback states for contact form reliability.
+- Created a sticky project-card storytelling layout to improve portfolio navigation and project discoverability.
 
-### Contact Endpoint
-- Replace the Formspree action URL in the contact form with your own endpoint.
+## Suggested GitHub Topics
 
-### Projects
-- Edit project-card-stack blocks to add or remove projects.
-- Update demo/code links and tag stacks per project.
+`portfolio` `personal-website` `html` `css` `javascript` `frontend` `web-animation` `responsive-design` `glassmorphism`
 
-### Branding
-- Change theme variables in style.css root block for quick restyling.
+## Author
 
----
-
-## Accessibility and UX Considerations
-
-- Uses meaningful alt attributes on images.
-- Uses touch-aware interaction gating for hover-only effects.
-- Includes scaled viewport and responsive typography for device coverage.
-- Uses visible state feedback for form submission outcomes.
-
-Potential future upgrades:
-- Add reduced-motion preference handling for animation-heavy sections.
-- Improve keyboard focus styling for all interactive controls.
-- Add section landmark enhancements and ARIA labels where needed.
+Cherish Kumar Satpathy  
+Full Stack Developer  
+Bhubaneswar, India
 
 ---
 
-## Resume-Ready Project Description
-
-Use this directly in your resume or portfolio case study.
-
-### Short Version (1-2 lines)
-Designed and developed a futuristic, high-performance personal portfolio using HTML, CSS, and JavaScript with advanced UI motion systems, 3D interactions, and asynchronous Formspree contact integration.
-
-### Bullet Version (ATS Friendly)
-- Engineered a fully responsive single-page portfolio with advanced animation systems including canvas starfields, meteor effects, glitch typography, and interactive 3D card tilt behaviors.
-- Built modular UI interaction patterns in vanilla JavaScript (magnetic controls, scroll-based perspective transforms, and observer-triggered typewriter effects) without external frontend frameworks.
-- Implemented asynchronous contact form workflow with Formspree API integration, including loading, success, and error UI states for robust user feedback.
-- Designed and implemented a sticky stacked project showcase to improve visual storytelling and highlight cross-domain projects in web development and computer vision.
-- Optimized mobile adaptability across multiple breakpoints while selectively disabling expensive hover/3D effects on touch devices for smoother performance.
-
-### Impact-Oriented Variant
-- Created a distinctive personal brand experience through a custom visual language (glassmorphism, kinetic gradients, animated layers) that increases recruiter and client engagement compared to static portfolio layouts.
-
----
-
-## Suggested GitHub Repository Topics
-
-- portfolio
-- personal-website
-- html
-- css
-- javascript
-- frontend
-- responsive-design
-- web-animation
-- glassmorphism
-- formspree
-
----
-
-## License
-
-This project is open for personal inspiration and learning.
-If you plan to reuse large sections, please provide attribution.
+If you want, the next upgrade can be a GitHub profile-style README banner with animated GIF preview and custom SVG logo mark for stronger recruiter-first branding.
