@@ -2,21 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- 1. AR/VR SCROLL EFFECT (Background Only) --- */
     const arVrElements = document.querySelectorAll('.ar-vr-element');
+    let isTicking = false;
     window.addEventListener('scroll', () => {
         // Disable on small screens for performance and to prevent overflow
         if (window.innerWidth < 768) return;
 
-        arVrElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if(rect.top < window.innerHeight && rect.bottom > 0) {
-                const screenCenter = window.innerHeight / 2;
-                const elCenter = rect.top + rect.height / 2;
-                const dist = (elCenter - screenCenter) * 0.05; 
-                const rotX = Math.max(-10, Math.min(10, dist));
-                el.style.transform = `perspective(1000px) rotateX(${rotX}deg)`;
-            }
-        });
-    });
+        if (!isTicking) {
+            window.requestAnimationFrame(() => {
+                arVrElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight && rect.bottom > 0) {
+                        const screenCenter = window.innerHeight / 2;
+                        const elCenter = rect.top + rect.height / 2;
+                        const dist = (elCenter - screenCenter) * 0.05;
+                        const rotX = Math.max(-10, Math.min(10, dist));
+                        el.style.transform = `perspective(1000px) rotateX(${rotX}deg)`;
+                    }
+                });
+                isTicking = false;
+            });
+            isTicking = true;
+        }
+    }, { passive: true });
 
     /* --- 2. MAGNETIC BUTTONS --- */
     // Only active on non-touch devices
@@ -61,13 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('star-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
-        
+
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
         resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', resizeCanvas, { passive: true });
 
         let stars = [];
         for(let i=0; i<150; i++) {
@@ -120,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(typeWriter, 50);
         }
     }
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && typeIndex === 0) {
@@ -128,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, { threshold: 0.5 });
-    
+
     const contactSection = document.querySelector('#contact');
     if(contactSection) observer.observe(contactSection);
 
@@ -139,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault(); // Prevent standard redirect
-            
+
             if(submitBtn) {
                 // 1. Activate Loading Animation
                 submitBtn.classList.add('loading');
@@ -163,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         submitBtn.classList.remove('loading');
                         submitBtn.classList.add('success');
                         contactForm.reset();
-                        
+
                         // Reset button state after 3 seconds
                         setTimeout(() => {
                             submitBtn.classList.remove('success');
@@ -190,10 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
     /* --- 8. CINEMATIC BLINK (Clean Fill, No Border/Glow) --- */
     const footerText = document.querySelector('.footer-cta');
     if(footerText) {
-        
+
         const triggerBurst = () => {
             // Randomly choose 2 or 3 blinks for this sequence
-            let totalBlinks = Math.floor(Math.random() * 2) + 2; 
+            let totalBlinks = Math.floor(Math.random() * 2) + 2;
             let blinkCount = 0;
 
             const performBlink = () => {
@@ -201,10 +208,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 footerText.style.color = '#CBACF9';
                 footerText.style.webkitTextStroke = '0px transparent'; // Remove the white border
                 footerText.style.textShadow = 'none'; // Remove the glow
-                
+
                 // 2. Stay ON for longer (150ms to 300ms)
                 setTimeout(() => {
-                    
+
                     // 3. Turn OFF (Revert to default CSS)
                     footerText.style.color = '';
                     footerText.style.webkitTextStroke = '';
@@ -222,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 }, Math.random() * 150 + 150); // ON duration
             };
-            
+
             performBlink();
         };
 

@@ -11,20 +11,20 @@
 /* 1. RESET & BASICS */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { 
-    background-color: var(--bg-dark); 
-    color: var(--text-white); 
-    font-family: var(--font-main); 
-    overflow-x: hidden; 
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-main);
+    overflow-x: hidden;
     perspective: 800px;
-    cursor: default; 
+    cursor: default;
 }
 
 /* Interactive elements */
-a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn { 
-    cursor: pointer !important; 
-    transform: translateZ(0); 
-    backface-visibility: hidden; 
+a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
+    cursor: pointer !important;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 /* 2. BACKGROUNDS */
@@ -46,35 +46,35 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .nav-link:hover { color: #fff; text-shadow: 0 0 5px rgba(255,255,255, 0.6), 0 0 10px rgba(192,192,192, 0.4), 0 0 20px rgba(192,192,192, 0.2); transform: scale(1.05); }
 
 /* 4. HERO SECTION */
-.hero-section { 
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    padding: 0 5%; 
-    position: relative; 
-    overflow: hidden; 
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
     z-index: 10;
 }
 
-.hero-container { 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    width: 100%; 
-    max-width: 1400px; 
-    height: 100vh; 
-    gap: 20px; 
-    flex-wrap: nowrap; 
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    height: 100vh;
+    gap: 20px;
+    flex-wrap: nowrap;
 }
 
-.hero-text { 
-    flex: 1; 
-    min-width: 500px; 
-    z-index: 50; 
-    position: relative; 
+.hero-text {
+    flex: 1;
+    min-width: 500px;
+    z-index: 50;
+    position: relative;
     padding-left: 2%;
-    pointer-events: auto; 
+    pointer-events: auto;
 }
 
 .badge { border: 1px solid var(--glass-border); padding: 8px 16px; border-radius: 50px; display: inline-block; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 25px; background: rgba(203, 172, 249, 0.05); color: var(--purple); }
@@ -88,13 +88,13 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .hero-desc { font-size: 1.2rem; color: #C1C2D3; max-width: 500px; line-height: 1.6; margin-bottom: 40px; }
 .text-purple { color: var(--purple); }
 
-.btn-group-hero { 
-    display: flex; 
-    gap: 20px; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    position: relative; 
-    z-index: 100; 
+.btn-group-hero {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
 }
 .magic-btn-container { position: relative; display: inline-flex; overflow: hidden; padding: 1px; border-radius: 12px; cursor: pointer; text-decoration: none; transition: 0.3s; z-index: 100; }
 .magic-btn-border { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 0%, transparent 80%, #CBACF9 100%); animation: spin 4s linear infinite; pointer-events: none; }
@@ -125,32 +125,32 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .draw-btn.small { padding: 8px 20px; font-size: 0.8rem; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-.hero-visual { 
-    flex: 1; 
-    height: 100%; 
+.hero-visual {
+    flex: 1;
+    height: 100%;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative; 
-    perspective: 1000px; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 1000px;
     transform-style: preserve-3d;
     pointer-events: none;
     z-index: 1;
 }
 
-.rotating-bar { 
-    position: absolute; 
+.rotating-bar {
+    position: absolute;
     top: 42%;
     left: 50%;
-    width: 140%; 
+    width: 140%;
     height: 120px;
     transform: translate(-50%, -50%);
-    border-radius: 50px; 
-    background: linear-gradient(90deg, transparent 0%, rgba(203, 172, 249, 0.6) 50%, transparent 100%); 
-    animation: barSpin 10s linear infinite; 
-    filter: blur(50px); 
-    opacity: 0.8; 
-    z-index: -1; 
+    border-radius: 50px;
+    background: linear-gradient(90deg, transparent 0%, rgba(203, 172, 249, 0.6) 50%, transparent 100%);
+    animation: barSpin 10s linear infinite;
+    filter: blur(50px);
+    opacity: 0.8;
+    z-index: -1;
 }
 @keyframes barSpin {
     0% { transform: translate(-50%, -50%) rotate(0deg) scaleX(1); }
@@ -158,26 +158,26 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     100% { transform: translate(-50%, -50%) rotate(360deg) scaleX(1); }
 }
 
-.img-content { 
-    width: 100%; 
-    height: 100%; 
-    background: transparent !important; 
+.img-content {
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
     border: none !important;
-    position: relative; 
-    z-index: 2; 
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-.my-photo { 
+.my-photo {
     width: auto;
-    height: 98vh; 
+    height: 98vh;
     min-width: unset;
-    object-fit: contain; 
-    filter: drop-shadow(0 0 30px rgba(0,0,0,0.6)); 
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(0,0,0,0.6));
     transform: translateY(-8%);
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 /* 5. BENTO GRID */
@@ -286,35 +286,35 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .input-container input:focus ~ .glow-bar, .input-container textarea:focus ~ .glow-bar { width: 100%; }
 
 /* Cyber Button */
-.cyber-btn { 
-    position: relative; 
-    padding: 15px 30px; 
-    background: transparent; 
-    border: 1px solid var(--purple); 
-    color: var(--purple); 
-    font-family: var(--font-display); 
-    font-weight: 700; 
-    letter-spacing: 2px; 
-    cursor: pointer; 
-    overflow: hidden; 
-    transition: 0.6s ease; 
-    margin-top: 20px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    z-index: 20; 
+.cyber-btn {
+    position: relative;
+    padding: 15px 30px;
+    background: transparent;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.6s ease;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
 }
 .cyber-btn:hover { background: var(--purple); color: #000; box-shadow: 0 0 30px rgba(203, 172, 249, 0.4); }
 
-.btn-glitch { 
-    position: absolute; 
-    top: 0; 
-    left: -100%; 
-    width: 100%; 
-    height: 100%; 
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); 
-    transition: 1.2s ease-in-out; 
-    transform: skewX(-20deg); 
+.btn-glitch {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    transition: 1.2s ease-in-out;
+    transform: skewX(-20deg);
 }
 .cyber-btn:hover .btn-glitch { left: 200%; transition: 1.2s ease-in-out; }
 
@@ -336,7 +336,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 @media (max-width: 1200px) {
     .hero-title { font-size: 3rem; }
     .hero-text { min-width: 450px; }
-    
+
     .bento-grid-complex {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -388,7 +388,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     .hero-title {
         font-size: clamp(1.2rem, 3.5vw, 2.5rem); /* Scaled down title */
     }
-    
+
     .hero-desc {
         font-size: 0.9rem;
         margin-bottom: 20px;
@@ -401,7 +401,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         object-fit: contain;
         transform: translateY(0);
     }
-    
+
     .rotating-bar {
         width: 100%;
         top: 50%;
@@ -434,7 +434,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     .btn-group {
         justify-content: center;
     }
-    
+
     .p-tags {
         justify-content: center;
     }
@@ -462,11 +462,11 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         padding: 10px 15px;
         top: 15px;
     }
-    
+
     .nav-links {
         gap: 15px;
     }
-    
+
     .nav-link {
         font-size: 0.8rem;
     }
@@ -488,13 +488,13 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     .bento-grid-complex {
         grid-template-columns: 1fr;
     }
-    
+
     .bio-card, .stack-card, .heatmap-card, .music-card, .stats-card, .location-card, .status-card {
         grid-column: span 1 !important;
         grid-row: auto;
         min-height: auto;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
@@ -521,7 +521,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         height: 200px;
         width: 100%;
     }
-    
+
     /* Footer */
     .footer-section {
         padding: 40px 5% 30px; /* Reduced padding */
@@ -543,7 +543,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         gap: 15px;
         padding: 12px;
     }
-    
+
     .logo {
         display: none; /* Separating name from nav bar by removing it */
     }
@@ -563,7 +563,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         height: auto;
         padding-bottom: 0;
     }
-    
+
     .hero-container {
         flex-direction: row !important; /* Force row */
         height: auto;
@@ -579,7 +579,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         padding-right: 5px;
         margin-bottom: 0;
     }
-    
+
     .hero-visual {
         width: 42%;
         height: auto;
@@ -588,7 +588,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         justify-content: flex-end;
         overflow: visible; /* Allow image to burst out visually */
     }
-    
+
     .hero-title {
         font-size: clamp(1rem, 6vw, 1.4rem); /* Tiny but readable title */
         margin-bottom: 10px;
@@ -612,14 +612,14 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         gap: 10px;
         align-items: flex-start;
     }
-    
+
     .magic-btn-content, .hire-btn-liquid {
         padding: 8px 16px;
         font-size: 0.7rem;
         width: 100%; /* Full width of text container */
         justify-content: center;
     }
-    
+
     .magic-btn-container, .hire-btn-liquid {
         width: 100%;
     }
@@ -629,7 +629,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         height: auto;
         max-height: none; /* Remove height caps */
         /* CHANGED: Removed negative translateX and added positive translateX to move right */
-        transform: scale(1.6) translateX(20px); 
+        transform: scale(1.6) translateX(20px);
         transform-origin: center right;
         /* CHANGED: Reset margin-right */
         margin-right: 0;
@@ -637,7 +637,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 
     /* Projects */
     .project-card-stack {
-        top: 80px; 
+        top: 80px;
     }
 
     .project-img {
@@ -661,58 +661,58 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
         width: 150px;
         height: 150px;
     }
-    
+
     .orbit-center {
         width: 40px;
         height: 40px;
         font-size: 1rem;
     }
-    
+
     /* TIGHTER VERTICAL SPACING FOR SMALL MOBILE */
     .about-section, .work-section, .footer-section {
         padding: 30px 15px; /* Significantly reduced vertical padding */
     }
-    
+
     .section-title {
         font-size: 1.8rem;
         margin-bottom: 20px; /* Reduced margin */
     }
-    
+
     .bento-grid-complex {
         gap: 15px; /* Reduced gap between cards */
     }
-    
+
     .bento-card {
         padding: 20px; /* Compact internal padding */
     }
-    
+
     .card-inner {
         padding: 20px;
         gap: 20px;
     }
-    
+
     .project-img {
         height: 140px; /* Smaller image height */
     }
-    
+
     .p-id {
         font-size: 1.5rem;
         margin-bottom: 5px;
     }
-    
+
     .card-inner h3 {
         font-size: 1.4rem;
         margin-bottom: 10px;
     }
-    
+
     .footer-cta {
         margin-bottom: 30px;
     }
-    
+
     .contact-wrapper {
         border-radius: 15px;
     }
-    
+
     .contact-visual, .contact-form-area {
         padding: 25px 15px;
     }
